@@ -1,0 +1,15 @@
+{
+    "name": "danielboqueztoloza/api",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "DanielBohorquezBT",
+            "email": "daniel.bohorquez@bodytechcorp.com"
+        }
+    ],
+    "require": {}
+}
