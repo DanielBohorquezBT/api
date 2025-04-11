@@ -2,18 +2,19 @@
 
 namespace App\Controllers;
 
-class IndexController
+use Phalcon\Mvc\Controller;
+
+class IndexController extends Controller
 {
-    protected $view;
-
-    public function __construct()
-    {
-        $this->view = new \Phalcon\Mvc\View(); // Initialize the view property
-    }
-
     public function indexAction()
     {
-        // Renderizar la vista por defecto
-        $this->view->pick('index', $exercises);
+        // Simulación de datos que podrías recuperar desde la base de datos
+        $exercises = [];
+
+        // Pasar los datos a la vista
+        $this->view->setVar('exercises', $exercises);
+
+        // Renderizar la vista 'index'
+        $this->view->pick('index');
     }
 }
