@@ -11,5 +11,7 @@
             "email": "daniel.bohorquez@bodytechcorp.com"
         }
     ],
-    "require": {}
+    "require": {
+        "zircote/swagger-php": "^5.0"
+    }
 }

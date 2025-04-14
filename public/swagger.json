@@ -1,0 +1,119 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Ejercicios",
+        "description": "CRUD de ejercicios usando Phalcon",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/exercises": {
+            "get": {
+                "tags": [
+                    "Ejercicios"
+                ],
+                "summary": "Obtener todos los ejercicios",
+                "operationId": "253a7b5209f519eb91d300f787075443",
+                "responses": {
+                    "200": {
+                        "description": "Lista de ejercicios"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Ejercicios"
+                ],
+                "summary": "Crear un nuevo ejercicio",
+                "operationId": "91a8a4700dfd3a7d0334c316abfe51b6",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "description"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Ejercicio creado exitosamente"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    }
+                }
+            }
+        },
+        "/exercises/{id}": {
+            "get": {
+                "tags": [
+                    "Ejercicios"
+                ],
+                "summary": "Obtener un ejercicio por ID",
+                "operationId": "4c55ff39b903c3b6887e5a31483cbabf",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ejercicio encontrado"
+                    },
+                    "404": {
+                        "description": "Ejercicio no encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Ejercicios"
+                ],
+                "summary": "Eliminar un ejercicio",
+                "operationId": "e5d311b1b802233b288dfb3a8a9b8566",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ejercicio eliminado correctamente"
+                    },
+                    "404": {
+                        "description": "Ejercicio no encontrado"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Ejercicios",
+            "description": "Operaciones relacionadas con ejercicios"
+        }
+    ]
+}

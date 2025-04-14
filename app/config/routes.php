@@ -1,6 +1,11 @@
 <?php
 $router = new Phalcon\Mvc\Router();
 
+$router->add("/", [
+    "controller" => "index",
+    "action" => "index",
+]);
+
 // Ruta por defecto para listar ejercicios
 $router->add("/exercises", [
     "controller" => "exercises",
