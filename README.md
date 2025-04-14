@@ -13,8 +13,8 @@
 2. Ejecuta:
 
 ```bash
-    composer install
-    php -S localhost:8000 -t public/
+composer install
+php -S localhost:8000 -t public/
 ```
 
 3. Abre tu navegador en: http://localhost:8000/exercises
@@ -25,30 +25,34 @@
 1. Ingresa a MySQL desde la consola:
 
 ```bash
-    mysql
+mysql
 ```
 
 2. Selecciona la base de datos:
 
 ```bash
-    USE fitness_api;
+USE fitness_api;
 ```
 
 ## 📘 Documentación con Swagger
 
 ✅ Sintaxis correcta con PHP 8.1+ (Atributos nativos)
 
+```bash
 #[OA\Info(
     version: '1.0.0',
     title: 'API de Ejercicios',
     description: 'CRUD de ejercicios usando Phalcon'
 )]
+```
 
 ❌ Forma incorrecta (PHPDoc, ya no recomendada):
 
+```bash
 /**
  * @OA\Info(...)
  */
+```
 
 ## 🏷️ Información obligatoria por controlador
 
@@ -97,15 +101,8 @@
 
     👉 Verifica que tienes Swagger-PHP instalado (opcional y no recomandado en proyectos grandes):
 
-        ```bash
-            composer require zircote/swagger-php
-        ```
+        composer require zircote/swagger-php
 
     👉 Genera el archivo swagger.json automáticamente (puede variar según la ruta del proyecto):
 
-        ```bash
-            ./vendor/bin/openapi app/Controllers --output public/swagger.json
-        ```
-
-
-
+        ./vendor/bin/openapi app/Controllers --output public/swagger.json
